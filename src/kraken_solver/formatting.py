@@ -41,7 +41,7 @@ def serialize_kraken_state(final_state: dict) -> dict:
 def _serialize_value(value):
     """Recursively serialize a value, converting Pydantic models to dicts."""
     if isinstance(value, BaseModel):
-        return value.model_dump()
+        return value.model_dump(mode='json')
     elif isinstance(value, dict):
         return {k: _serialize_value(v) for k, v in value.items()}
     elif isinstance(value, list):

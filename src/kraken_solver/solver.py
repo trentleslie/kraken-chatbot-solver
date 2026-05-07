@@ -12,9 +12,11 @@ from kraken_solver.formatting import format_output_for_benchmark, serialize_krak
 def kraken_discovery_solver(
     model: str = "anthropic/claude-sonnet-4-6",  # TODO: wire to graph when config support is added upstream
     enable_literature_grounding: bool = True,  # TODO: wire to graph when config support is added upstream
-    **tool_options,
 ) -> Solver:
     """KRAKEN discovery pipeline as an Inspect solver."""
+
+    # Build the graph once per solver instance, not per benchmark item
+    graph = build_discovery_graph()
 
     async def solve(state: TaskState, generate: Generate) -> TaskState:
         # 1. Build initial state from benchmark input
@@ -24,7 +26,6 @@ def kraken_discovery_solver(
         }
 
         # 2. Run the KRAKEN graph
-        graph = build_discovery_graph()
         final_state = await graph.ainvoke(initial_state)
 
         # 3. Format output for benchmark scoring
