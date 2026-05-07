@@ -1,7 +1,7 @@
 ---
 title: "feat: Scaffold KRAKEN AstaBench Solver Package"
 type: feat
-status: active
+status: completed
 date: 2026-05-07
 ---
 
@@ -72,7 +72,7 @@ KRAKEN's discovery pipeline (`kestrel_backend.graph`) runs as a LangGraph workfl
 
 ## Implementation Units
 
-- [ ] **Unit 1: Package structure and pyproject.toml**
+- [x] **Unit 1: Package structure and pyproject.toml**
 
 **Goal:** Create the package skeleton with correct build config and dependencies.
 
@@ -105,7 +105,7 @@ KRAKEN's discovery pipeline (`kestrel_backend.graph`) runs as a LangGraph workfl
 
 ---
 
-- [ ] **Unit 2: solver.py — Core solver wrapper**
+- [x] **Unit 2: solver.py — Core solver wrapper**
 
 **Goal:** Implement the Inspect AI solver that bridges `TaskState` to the KRAKEN graph.
 
@@ -135,7 +135,7 @@ KRAKEN's discovery pipeline (`kestrel_backend.graph`) runs as a LangGraph workfl
 
 ---
 
-- [ ] **Unit 3: formatting.py — Output formatting helpers**
+- [x] **Unit 3: formatting.py — Output formatting helpers**
 
 **Goal:** Implement helpers that convert KRAKEN's structured output into benchmark-compatible text and serializable dicts.
 
@@ -164,7 +164,7 @@ KRAKEN's discovery pipeline (`kestrel_backend.graph`) runs as a LangGraph workfl
 
 ---
 
-- [ ] **Unit 4: Smoke test**
+- [x] **Unit 4: Smoke test**
 
 **Goal:** Verify the solver is importable and structurally valid without running the full pipeline.
 
